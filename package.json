@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\""
   },
   "keywords": [],
-  "author": "",
+  "author": "Paul Hanneforth",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
