@@ -20,7 +20,11 @@ module.exports = (appToken) => {
     
         const queryAuthToken = req.query.authToken;
         const cookieAuthToken = req.cookies.authToken;
-    
+
+        if(queryAuthToken == undefined && cookieAuthToken == undefined) {
+            next();
+            return;
+        }
         if(cookieAuthToken == undefined && queryAuthToken) {
             res.cookie("authToken", queryAuthToken);
         }
@@ -39,7 +43,6 @@ module.exports = (appToken) => {
             name: data.data.name,
             authToken: req.authToken
         }
-    
         next();
     
     })
