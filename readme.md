@@ -29,14 +29,14 @@ app.use("/", arcticNode(appToken))
 
 app.get("/login", (req, res) => {
     // authenticate user and then redirect the user to /
-    res.authenticate(appID, "http://localhost:4000/")
+    res.authenticate(appID, "http://127.0.0.1:4000/")
 })
 app.get("/", (req, res) => {
 
     // check if user is already authenticated
     if(!req.authenticated) {
         // if not than authenticate the user
-        res.authenticate(appID, "http://localhost:4000/")
+        res.authenticate(appID, "http://127.0.0.1:4000/")
     }
     // if the user is authenticated then you're ready to access the user information
     res.send("Hello! " + req.user.name + " " + req.user.email);
