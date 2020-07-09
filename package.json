@@ -1,13 +1,13 @@
 {
   "name": "arctic-node",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\""
   },
   "keywords": [],
-  "author": "",
+  "author": "Paul Hanneforth",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
