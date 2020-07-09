@@ -21,6 +21,8 @@ module.exports = (appToken) => {
         const queryAuthToken = req.query.authToken;
         const cookieAuthToken = req.cookies.authToken;
 
+        res.authenticate = (appID, callbackURL) => res.redirect(serverAddress + "/login?action=authenticate&app=" + appID + "&redirect=" + callbackURL)
+
         if(queryAuthToken == undefined && cookieAuthToken == undefined) {
             req.authenticated = false;
             next();
