@@ -22,6 +22,7 @@ module.exports = (appToken) => {
         const cookieAuthToken = req.cookies.authToken;
 
         if(queryAuthToken == undefined && cookieAuthToken == undefined) {
+            req.authenticated = false;
             next();
             return;
         }
@@ -43,6 +44,7 @@ module.exports = (appToken) => {
             name: data.data.name,
             authToken: req.authToken
         }
+        req.authenticated = true
         next();
     
     })
