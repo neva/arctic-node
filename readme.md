@@ -29,7 +29,7 @@ app.use("/", arcticNode(appToken))
 
 app.get("/login", (req, res) => {
     // authenticate user and then redirect the user to /
-    res.authenticate(appID, "http://localhost:4000/"))
+    res.authenticate(appID, "http://localhost:4000/")
 }
 app.get("/", (req, res) => {
 
