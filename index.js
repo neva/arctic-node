@@ -4,7 +4,7 @@ module.exports = (appToken) => {
     const cookieParser = require("cookie-parser");
     const axios = require("axios");
     
-    const serverAddress = "http://localhost:3000"
+    const serverAddress = "http://46.101.253.103:3000"
     
     const getUserData = async (userAuthToken, appToken) => {
         const response = await axios.post(serverAddress + "/app/user", {
