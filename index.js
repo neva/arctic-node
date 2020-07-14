@@ -41,6 +41,13 @@ module.exports = (appToken) => {
         }
     
         const data = await getUserData(req.authToken, appToken);
+
+        if(data.error != false) {
+            req.error = true;
+            next();
+            return;
+        }
+
         req.user = {
             email: data.data.email,
             name: data.data.name,
