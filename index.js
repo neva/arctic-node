@@ -4,7 +4,7 @@ const axios = require("axios");
 
 const serverAddress = "http://localhost:3000"
 
-const getUserData = async (userAuthToken, appToken) => {
+const getUser = async (userAuthToken, appToken) => {
     const response = await axios.post(serverAddress + "/app/user", {
         userAuthToken,
         appToken
@@ -40,7 +40,7 @@ module.exports = (appToken) => {
             req.authToken = null;
         }
     
-        const data = await getUserData(req.authToken, appToken);
+        const data = await getUser(req.authToken, appToken);
 
         if(data.error != false) {
             req.error = true;
