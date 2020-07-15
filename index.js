@@ -1,3 +1,11 @@
+const getUserData = async (userAuthToken, appToken) => {
+    const response = await axios.post(serverAddress + "/app/user", {
+        userAuthToken,
+        appToken
+    })
+    return response.data;
+}
+
 module.exports = (appToken) => {
 
     const router = require("express").Router();
@@ -5,14 +13,6 @@ module.exports = (appToken) => {
     const axios = require("axios");
     
     const serverAddress = "http://localhost:3000"
-    
-    const getUserData = async (userAuthToken, appToken) => {
-        const response = await axios.post(serverAddress + "/app/user", {
-            userAuthToken,
-            appToken
-        })
-        return response.data;
-    }
     
     router.use(cookieParser())
     
