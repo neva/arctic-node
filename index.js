@@ -2,7 +2,7 @@ const router = require("express").Router();
 const cookieParser = require("cookie-parser");
 const axios = require("axios");
 
-const serverAddress = "http://arcticxyz.ddns.net/"
+const serverAddress = "http://arcticxyz.ddns.net"
 
 const getUser = async (userAuthToken, appToken) => {
     const response = await axios.post(serverAddress + "/app/user", {
