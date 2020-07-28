@@ -25,6 +25,7 @@ module.exports = (appToken) => {
 
         if(queryAuthToken == undefined && cookieAuthToken == undefined) {
             req.authenticated = false;
+            req.isAuthenticated = false;
             next();
             return;
         }
@@ -53,7 +54,8 @@ module.exports = (appToken) => {
             name: data.data.name,
             authToken: req.authToken
         }
-        req.authenticated = true
+        req.authenticated = true;
+        req.isAuthenticated = true;
         next();
     
     })
