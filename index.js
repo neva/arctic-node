@@ -52,7 +52,8 @@ module.exports = (appToken) => {
         req.user = {
             email: data.data.email,
             name: data.data.name,
-            authToken: req.authToken
+            authToken: req.authToken,
+            id: data.data.id
         }
         req.authenticated = true;
         req.isAuthenticated = true;
